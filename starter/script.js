@@ -16,7 +16,7 @@ scorePlayer1.textContent = 0;
 scorePlayer2.textContent = 0;
 diceDiplay.classList.add("hidden");
 
-const scores = [0, 0];
+let scores = [0, 0];
 let activePlayer = 0;
 
 const activePlayer1 = document.querySelector(".player--0");
@@ -73,4 +73,28 @@ btnHold.addEventListener("click", function () {
     //switch to the next player
     switchPlayer();
   }
+});
+
+//Resseting the game
+
+btnNewGame.addEventListener("click", function () {
+  scorePlayer1.textContent = 0;
+  scorePlayer2.textContent = 0;
+
+  currentScorePlayer1.textContent = 0;
+  currentScorePlayer2.textContent = 0;
+
+  activePlayer1.classList.remove("player--winner");
+  activePlayer2.classList.remove("player--winner");
+
+  activePlayer1.classList.remove("player--activee");
+  activePlayer2.classList.remove("player--active");
+  activePlayer1.classList.add("player--active");
+
+  diceDiplay.classList.add("hidden");
+
+  playing = true;
+  scores = [0, 0];
+  activePlayer = 0;
+  currentScore = 0;
 });
